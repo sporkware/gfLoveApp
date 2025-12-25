@@ -1,7 +1,6 @@
 package com.example.lovecoupons
 
 import android.content.Intent
-import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -17,10 +16,6 @@ class SplashActivity : AppCompatActivity() {
 
         val heartIcon = findViewById<ImageView>(R.id.heartIcon)
 
-        // Play heartbeat sound
-        val mediaPlayer = MediaPlayer.create(this, R.raw.heartbeat)
-        mediaPlayer.start()
-
         // Animate heart
         val fadeIn = AnimationUtils.loadAnimation(this, android.R.anim.fade_in)
         fadeIn.duration = 1000
@@ -34,8 +29,6 @@ class SplashActivity : AppCompatActivity() {
 
         // Go to main after 3 seconds
         Handler(Looper.getMainLooper()).postDelayed({
-            mediaPlayer.stop()
-            mediaPlayer.release()
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }, 3000)

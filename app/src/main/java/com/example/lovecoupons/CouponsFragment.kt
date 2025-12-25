@@ -1,6 +1,5 @@
 package com.example.lovecoupons
 
-import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -49,7 +48,6 @@ class CouponsFragment : Fragment() {
         recyclerView.adapter = CouponAdapter(coupons) { coupon ->
             Toast.makeText(context, getString(R.string.redeemed), Toast.LENGTH_SHORT).show()
             showConfetti()
-            playRedeemSound()
         }
         return view
     }
@@ -65,11 +63,5 @@ class CouponsFragment : Fragment() {
             .addSizes(Size(12))
             .setPosition(-50f, viewKonfetti.width + 50f, -50f, -50f)
             .streamFor(300, 5000L)
-    }
-
-    private fun playRedeemSound() {
-        val mediaPlayer = MediaPlayer.create(context, R.raw.heartbeat)
-        mediaPlayer.start()
-        mediaPlayer.setOnCompletionListener { it.release() }
     }
 }
