@@ -20,6 +20,8 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
+    - name: Download Gradle wrapper jar
+      run: curl -L https://services.gradle.org/distributions/gradle-8.4-wrapper.jar -o gradle/wrapper/gradle-wrapper.jar
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
