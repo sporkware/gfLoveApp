@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/couponsFragment"
+        android:icon="@drawable/ic_heart"
+        android:title="@string/coupons" />
+    <item
+        android:id="@+id/datesFragment"
+        android:icon="@drawable/ic_calendar"
+        android:title="@string/dates" />
+    <item
+        android:id="@+id/funFragment"
+        android:icon="@drawable/ic_smile"
+        android:title="@string/fun" />
+</menu>
