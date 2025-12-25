@@ -21,7 +21,7 @@ jobs:
         cache: gradle
 
     - name: Download Gradle wrapper jar
-      run: curl -L https://services.gradle.org/distributions/gradle-8.4-wrapper.jar -o gradle/wrapper/gradle-wrapper.jar
+      run: curl -L https://github.com/gradle/gradle/raw/v8.4.0/gradle/wrapper/gradle-wrapper.jar -o gradle/wrapper/gradle-wrapper.jar
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
