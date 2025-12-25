@@ -5,6 +5,19 @@
     </style>
 
     <style name="Theme.LoveCoupons.NoActionBar" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.LoveCoupons.Dark" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/pink_300</item>
+        <item name="colorPrimaryVariant">@color/pink_500</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/red_100</item>
+        <item name="colorSecondaryVariant">@color/red_300</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:colorBackground">@color/black</item>
+        <item name="colorOnBackground">@color/white</item>
+    </style>
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/pink_500</item>
         <item name="colorPrimaryVariant">@color/pink_700</item>

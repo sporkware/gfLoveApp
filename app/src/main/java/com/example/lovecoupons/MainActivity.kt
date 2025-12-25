@@ -1,7 +1,9 @@
 package com.example.lovecoupons
 
 import android.os.Bundle
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
@@ -26,5 +28,22 @@ class MainActivity : AppCompatActivity() {
             )
         )
         bottomNavigationView.setupWithNavController(navController)
+
+        // Dark mode toggle
+        val darkModeToggle = findViewById<ImageButton>(R.id.darkModeToggle)
+        darkModeToggle.setOnClickListener {
+            val currentMode = AppCompatDelegate.getDefaultNightMode()
+            if (currentMode == AppCompatDelegate.MODE_NIGHT_YES) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            }
+        }
+
+        // Add slide animations for fragment transitions
+        supportFragmentManager.addOnBackStackChangedListener {
+            val currentFragment = navHostFragment.childFragmentManager.primaryNavigationFragment
+            // Animations are handled by NavController
+        }
     }
 }

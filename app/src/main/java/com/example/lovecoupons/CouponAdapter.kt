@@ -3,6 +3,7 @@ package com.example.lovecoupons
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -26,7 +27,11 @@ class CouponAdapter(
     override fun onBindViewHolder(holder: CouponViewHolder, position: Int) {
         val coupon = coupons[position]
         holder.couponText.text = coupon
-        holder.itemView.setOnClickListener { onItemClick(coupon) }
+        holder.itemView.setOnClickListener {
+            val pulseAnim = AnimationUtils.loadAnimation(holder.itemView.context, R.anim.pulse)
+            holder.heartIcon.startAnimation(pulseAnim)
+            onItemClick(coupon)
+        }
     }
 
     override fun getItemCount() = coupons.size
