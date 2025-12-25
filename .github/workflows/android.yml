@@ -24,11 +24,12 @@ jobs:
       uses: gradle/gradle-build-action@v2
       with:
         gradle-version: 8.4
+        arguments: --build-cache --parallel
 
     - name: Build with Gradle
-      run: gradle build
+      run: gradle build --build-cache --parallel
     - name: Build APK
-      run: gradle assembleDebug
+      run: gradle assembleDebug --build-cache --parallel
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
